@@ -1,0 +1,845 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+
+// all colors
+$yellow : #DBC078;
+$black : #000;
+$white : #fff;
+$grey : #1F1F1F;
+
+
+// all fonts
+$roboto : 'Roboto',
+sans-serif;
+$montserrat : 'Montserrat',
+sans-serif;
+
+
+@mixin phone {
+    @media (max-width:640px) {
+        @content;
+    }
+}
+
+
+
+@mixin tablet {
+    @media (max-width:780px) {
+        @content;
+    }
+}
+
+
+@mixin desktop {
+    @media (min-width:980px) {
+        @content;
+    }
+}
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: $roboto;
+    font-size: .9em;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+.topstrip {
+    display: grid;
+    background: $yellow;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px 0;
+
+    @include phone {
+        grid-template-columns: 1fr;
+
+        div {
+            &:nth-child(2) {
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+
+            .input-group {
+                border: 1px solid rgba($black, .5);
+                margin: 10px 20px;
+
+
+            }
+
+
+
+            .social-icons {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+
+
+
+
+        }
+
+    }
+
+
+    &>div {
+        align-self: center;
+        justify-self: center;
+
+        .social-icons {
+            img {
+
+                padding: 0;
+                display: inline;
+                vertical-align: baseline;
+                margin: 0 10px;
+
+            }
+        }
+
+
+        .input-group-text {
+            background: none !important;
+            border: none;
+            color: #000;
+        }
+
+        .searchinput {
+            background: none;
+            border: none;
+            margin-right: 20px;
+        }
+
+
+    }
+
+
+    &>div {
+        &:last-child {
+            a {
+                font-family: $montserrat;
+                font-size: 14px;
+                color: $black;
+                text-transform: uppercase;
+                margin: 0 10px;
+                text-decoration: none;
+                font-weight: bold;
+
+            }
+        }
+
+    }
+
+}
+
+
+.bg-dark {
+    background: $black !important;
+}
+
+
+.navbar-dark .navbar-nav .nav-link {
+    font-family: $montserrat;
+    font-weight: bold;
+
+    @include desktop {
+        padding: .5rem 1.4rem;
+
+    }
+}
+
+.active>.nav-link {
+    color: $yellow !important;
+}
+
+
+.midpage {
+    background: $grey;
+
+}
+
+
+
+.evening-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 2fr 1fr 2fr;
+
+    @include phone {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    &>div {
+
+
+        min-height: 250px;
+
+        &:first-child {
+            grid-row: 1/3;
+            grid-column: 1/3;
+            background: url(../images/evening-dress-1.png) no-repeat center top;
+            background-size: cover;
+
+            @include phone {
+                grid-row: 2/3;
+                grid-column: 1;
+            }
+        }
+
+        &:nth-child(2) {
+            grid-column: 3/4;
+            grid-row: 1/2;
+            color: $white;
+
+            @include phone {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+
+            h4 {
+                font-family: $montserrat;
+                font-weight: normal;
+                color: $yellow;
+
+            }
+
+        }
+
+        &:nth-child(3) {
+            grid-column: 1/2;
+            grid-row: 3;
+            background: url(../images/evening-dress-2.png) no-repeat center top;
+            background-size: cover;
+
+            @include phone {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+        }
+
+        &:nth-child(4) {
+            grid-column: 2/3;
+            grid-row: 3;
+            background: url(../images/evening-dress-3.png) no-repeat center top;
+            background-size: cover;
+
+            @include phone {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+        }
+
+
+        &:nth-child(5) {
+            grid-column: 3/4;
+            grid-row: 2/4;
+            background: url(../images/evening-dress-4.png) no-repeat center top;
+            background-size: cover;
+
+            @include phone {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+        }
+
+
+    }
+
+
+}
+
+
+
+
+.extend-boutique
+{
+
+
+    &>div
+    {
+        &:nth-child(1)
+        {
+            background:url("../images/myboutique1.jpg");
+            background-size: cover;
+        }
+
+        &:nth-child(3)
+        {
+            background:url("../images/myboutique2.jpg");
+            background-size: cover;
+        }
+
+
+        &:nth-child(4)
+        {
+            background:url("../images/myboutique3.jpg");
+            background-size: cover;
+        }
+
+        &:nth-child(5)
+        {
+            background:url("../images/myboutique4.jpg");
+            background-size: cover;
+        }
+
+
+    }
+
+
+}
+
+
+
+
+.more {
+    border: 1px solid #DBC078;
+    padding: 10px;
+    color: $white;
+    text-decoration: none;
+    color: #fff !important;
+
+    &:hover
+    {
+        color: $white;
+        text-decoration: none;
+    }
+
+}
+
+.wedding-collection {
+
+
+    background:url(../images/wedding-collection-bg.jpg) no-repeat center top;
+    background-size: cover;
+
+
+    h2 {
+
+        font-family: $montserrat;
+        font-weight: normal;
+        color: $yellow;
+        text-align:center;
+        font-size: 1.8em;
+
+
+    }
+
+}
+
+
+.bookappointment
+{
+    background: $yellow;
+    text-align: center;
+
+    a
+    {
+        
+        border:1px solid $black;
+        padding-top:1px;
+        line-height: 30px;
+        display: inline-block;
+        padding: 0 20px;
+        color: $black;
+        font-family: $montserrat;
+        text-decoration: none;
+
+
+        
+        
+    }
+
+}
+
+.footer
+{
+    background: $black;
+    line-height: 3em;
+    text-align: center;
+    color: $white;
+}
+
+.img-cont
+{
+    position: relative;
+
+    
+    & > div
+    {
+        position: absolute;
+        width: 100%;
+        display: block;
+        z-index: 5;
+        background: rgba($black,.8);
+        bottom:0;
+        left: 0;
+        text-align: center;
+
+        a
+        {
+            display: inline-block;
+            border: 1px solid $yellow;
+            padding: 5px 10px;
+            margin: 10px 0;
+            color: $yellow;
+            text-decoration:none;
+            width: 200px;
+
+            img{
+                display: inline-block;
+            }
+
+        }
+
+       
+    }
+}
+
+
+
+.header-slides
+{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    text-align: center;
+    overflow:hidden;
+    background: $black;
+
+    @include phone
+    {
+        height: 300px;
+    }
+    
+
+    &>div
+    {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+       
+        &>div{
+
+            align-self: center;
+            justify-self: center;
+
+        h2
+        {
+            
+            font-family: $montserrat;
+            font-size: 60px;
+            color: $white;
+            font-weight: bold;
+            margin: 10px 0;
+
+            @include phone
+            {
+                font-size: 25px;
+            }
+        }
+
+        h6
+        {
+            
+            font-family: $montserrat;
+            font-size: 30px;
+            font-weight: bold;
+            color: $white;
+            margin: 10px 0;
+
+            @include phone
+            {
+                font-size: 15px;
+            }
+        }
+
+        a
+        {
+            display: inline-block;
+            padding: 10px 20px;
+            border:2px solid $yellow;
+            font-family: $montserrat;
+            font-size: 16px;
+            color: $white;
+            font-weight: bold;
+            letter-spacing: 10px;
+            text-decoration: none;
+            background: rgba($black,.3);
+            margin-top: 10px;
+
+            @include phone
+            {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+            
+            img
+            {
+                width:18px;
+                vertical-align: baseline;
+            }
+
+        }
+
+    }
+
+
+    }
+
+
+
+
+    .img1
+    {
+        background: url(../images/background.jpg) no-repeat center top;
+        background-size: cover;
+        z-index: 3;
+
+    }
+
+
+
+
+    .img2
+    {
+        background: url(../images/img2.jpg) no-repeat center top;
+        background-size: cover;
+        z-index: 2;
+
+    }
+
+
+
+
+    .img3
+    {
+        background: url(../images/img3.jpg) no-repeat center top;
+        background-size: cover;
+        z-index: 1;
+
+    }
+
+
+}
+
+
+.headingstrip
+{
+    background: url(../images/strip.jpg) no-repeat center top;
+    background-size: cover;
+    min-height: 100px;
+    width:100%;
+    display: grid;
+    align-content: center;
+
+    h2{
+
+        font-size: 30px;
+        font-weight: bold;
+        color: $black;
+        font-family: $montserrat;
+        padding-left: 20px;
+
+    }
+}
+
+.shoppinggrid
+{
+    padding:20px;
+    display:grid;
+    grid-template-columns: 240px auto;
+
+
+    @include phone
+    {
+        grid-template-columns: 1fr;
+        padding: 0px;
+    }
+
+
+
+    & > div {  }
+
+    & > div:nth-child(1)
+    {
+        background:rgba($black, .1);
+        padding:20px;
+        border-radius: 10px;
+
+        @include phone
+        {
+            background: none;
+            border-radius: 0;
+        }
+    }
+}
+
+
+
+.filters
+{
+    h2
+    {
+        font-family: $montserrat;
+        font-size: 18px;
+        font-weight: bold;
+        color: $black;
+        padding: 10px 0;
+        
+        border-bottom: 1px solid rgba($black, .3);
+    }
+
+
+    ul
+    {
+        li
+        {
+            a
+            {
+                color: #666666;
+                font-weight: bold;
+                font-family: $montserrat;
+                line-height: 30px;
+                text-decoration: none;
+               
+                &:hover
+                {
+                    color: #8A693F;
+                }
+            }
+
+            .active
+            {
+                color: #8A693F;
+            }
+        }
+    }
+
+
+}
+
+
+
+.colorgrid
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-gap: 5px;
+    margin:10px 20px 20px 0px;
+
+   
+
+    & > div
+    {
+        border:1px solid rgba($black, .3);
+        padding: 5px;
+        min-height: 20px;
+        cursor: pointer;
+    }
+
+
+    .bg-green{background:green;}
+    .bg-pink{background:pink;}
+    .bg-yellow{background:$yellow;}
+    .bg-red{background:red;}
+    .bg-purple{background:purple;}
+    .bg-black{background:$black;}
+    .bg-white{background:$white;}
+    .bg-skyblue{background:skyblue;}
+    .bg-amber{background:orange;}
+    .bg-navyblue{background:navy;}
+    .bg-blue{background:blue;}
+    .bg-blue{background:brown;}
+
+
+}
+
+
+
+
+
+.products
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+
+    @include phone
+    {
+        grid-template-columns: 1fr;
+    }
+    
+
+    & > div{
+        border:1px solid rgba($black,.2);
+
+    & > div:nth-child(2)
+    {
+        padding: 10px;
+       
+        p
+        {
+            color: #666666;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 30px;
+        }
+
+
+        h5
+        {
+            color: $black;
+            font-weight: bold;
+            margin: 5px 0;
+            font-size: 1.2em;
+
+            span
+            {
+                padding-left:20px;
+                color: #8A693F;
+
+                a
+                {
+                    color: #643C09;
+                }
+            }
+        }
+
+
+    }
+
+}
+
+
+}
+
+
+
+.contact
+{
+
+    background: $grey;
+
+
+    h2
+    {
+        text-align: center;
+        color: $yellow;
+        font-family: $montserrat;
+        font-size: 2em;
+    }
+
+
+    .addressgrid 
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 20px;
+        max-width: 900px;
+        margin: auto;
+
+        @include phone
+        {
+            grid-template-columns: 1fr;
+
+        }
+
+        &>div
+        {
+            text-align: center;
+
+            img
+            {
+                width: 150px;
+                margin-bottom: 20px;
+            }
+
+            p
+            {
+                text-align: center;
+                color: $yellow;
+                font-family: $roboto;
+                margin-bottom: 20px;
+                
+            }
+        }
+
+
+    }
+
+}
+
+
+.contactform
+{
+    background: #161616;
+
+    .formcontainer
+    {
+        max-width: 900px;
+        margin: auto;
+
+        @include phone
+        {
+            padding: 0 20px;
+        }
+
+
+        input
+        {
+            background: #222222;
+            border:none;
+            color: #fff !important;
+        }
+
+        textarea
+        {
+            background: #222222;
+            border:none;
+            color: #fff !important; 
+        }
+
+
+        .btn-secondary
+        {
+            background: none;
+            color: $white;
+            font-family: $montserrat;
+            border:1px solid $yellow;
+            font-weight: bold;
+            border-radius: 0;
+            padding: 10px 20px;
+        }
+
+    }
+
+}
